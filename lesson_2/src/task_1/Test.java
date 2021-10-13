@@ -77,5 +77,49 @@ public class Test {
 
         // MyLinkedList tests
 
+        MyList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.print();
+        myLinkedList.add(5);
+        myLinkedList.print();
+        myLinkedList.add(6);
+        myLinkedList.print();
+        myLinkedList.add(7);
+        myLinkedList.print();
+
+        System.out.println(myLinkedList.contains(6));
+        System.out.println(myLinkedList.contains(8));
+
+        System.out.println(Arrays.toString(myLinkedList.toArray()));
+
+        myLinkedList.add(8);
+        myLinkedList.print();
+        myLinkedList.remove(Integer.valueOf(6));
+        myLinkedList.print();
+
+        List<Integer> myList = new ArrayList<>();
+        myList.add(1);
+        myList.add(2);
+        myList.add(3);
+        myLinkedList.addAll(myList);
+        myLinkedList.print();
+
+        myLinkedList.add(3, 9);
+        myLinkedList.print();
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(11);
+        list1.add(22);
+        list1.add(33);
+        myLinkedList.addAll(5, list1);
+        myLinkedList.print();
+
+        System.out.println(myLinkedList.get(7));
+
+        myLinkedList.set(2, 77);
+        myLinkedList.print();
+
+        myLinkedList.remove(2);
+        myLinkedList.print();
+
     }
 }
