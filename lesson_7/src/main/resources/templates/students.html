@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список студентов</title>
+</head>
+<body>
+
+<h1>Список студентов</h1>
+
+<table border="1">
+    <tr>
+        <th>Идентификатор</th>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr th:each="s : ${students}">
+        <td th:text="${s.getId()}"></td>
+        <td th:text="${s.getName()}"></td>
+        <td th:text="${s.getAge()}"></td>
+        <td><a th:text="'Изменить'" th:href="@{/update/{id}(id=${s.getId()})}"></a></td>
+        <td><a th:text="'Удалить'" th:href="@{/delete/{id}(id=${s.getId()})}"></a></td>
+    </tr>
+</table>
+
+<br>
+
+<a href="/add">Добавить студента</a>
+
+<p>
+
+<a href="/">На главную страницу</a>
+
+</body>
+</html>
